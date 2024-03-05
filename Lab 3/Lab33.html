@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .screen{
+            background: #b4b2b2;
+            width: calc(100% - 65px);
+            height: 30px;
+            padding: 30px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        button{
+            padding: 30px;
+            width: 35px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1 style="text-align: center;">Máy tính</h1>
+            <div class="screen"></div>
+            <p class="message" style="color: red;text-align: center; display: none;"> Không được nhập dấu trước</p>
+            <div id="table">
+            </div>
+        </div>
+    </div>
+    <script>
+        const arr = [
+            [7,8,9,"+"],
+            [4,5,6,"-"],
+            [1,2,3,"*"],
+            [0,"c","=",":"],
+        ]
+
+        let table = document.getElementById("table")
+        let screen = document.getElementsByClassName("screen")[0]
+
+        arr.map(a => {
+            table.innerHTML += a.map(n => `<button onclick=handleClick(event)>${n}</button>`).join(" ") +"<br>"
+            // `<button >${num}</button>`
+        })
+
+        let nums = []
+        let keys = []
+        let lenN = 0
+        const dau = ["+", "-", "*", ":", "c", "="]
+
+        function handleClick(event) {
+            let key = event.target.innerText
+            screen.innerText += key
+            let num = screen.innerText
+            let n = Array.from(num)
+
+            document.getElementsByClassName("message")[0].style.display = "none"
+
+            function check() {
+                
+                // screen.innerText = ""
+                if (dau.includes(num[0])) {
+                    document.getElementsByClassName("message")[0].style.display = "block"
+                    return false
+                }
+                return true
+            }
+
+            function pushMeDaddy() {
+                console.log("arr" ,lenN, n);
+                console.log(n.splice(0, lenN));
+                n.pop()
+
+                if (dau.includes(n[0])) {
+                    n.shift()
+                }
+                let tmp = n.join("")
+                nums.push(tmp);
+                console.log("deleted",n);
+                // console.log(nums);
+                lenN = n.length
+            }
+
+        //     if (key == "c") {
+        //         screen.innerText = ''
+        //         nums = []
+        //         keys = []
+        //         return
+        //     }
+
+        //     if(key == "=") {
+        //         console.log("nums :", nums);
+        //         console.log("keys :", keys);
+        //     }
+
+        //     let num = screen.innerText;
+
+
+        //     if
+        //     (
+        //         Array.from(num).includes("+") || 
+        //         Array.from(num).includes("-") || 
+        //         Array.from(num).includes("*") || 
+        //         Array.from(num).includes(":")
+        //     ) 
+        //     {
+        //         if (
+        //             num[0] === '+' ||
+        //             num[0] === '-' ||
+        //             num[0] === '*' ||
+        //             num[0] === ':' 
+        //         ) {
+        //             num = ''
+        //             screen.innerText = ''
+        //             document.getElementsByClassName("message")[0].style.display = "block"
+        //             return
+        //         }
+        //         nums.push(num.splice())
+
+        //         if (typeof parseInt(key) -1 !== NaN ) {
+        //             keys.push(key)
+        //         }
+   
+        //     }
+        // }
+
+            switch (key) {
+                case "+":
+                    if (!check()) {
+                        return
+                    }
+
+                    pushMeDaddy()
+
+                    break;
+                case "-":
+                    
+                    break;
+                case "*":
+                    
+                    break;
+                case ":":
+                    
+                    break;
+                case "c":
+                    
+                    break;
+                case "=":
+                    pushMeDaddy()
+                    // screen.innerText = `Kết quả: ${nums.reduce((p, c)=> p+c, 0)}`
+                    break;
+            
+                default:
+                    
+
+                    break;
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>

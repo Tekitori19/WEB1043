@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng cửu chương</title>
+</head>
+<body>
+    <p id="content" style="font-size: 20px; text-align: center;"></p>
+    <script>
+        let content = document.getElementById('content')
+        for (let i = 1; i < 10; i++) {
+            for (let j = 1; j <= 10; j++) {
+                content.innerHTML += `${i} * ${j} = ${i*j} <br>`
+            }
+            content.innerHTML += "<hr> <br>"
+        }
+    </script>
+</body>
+</html>

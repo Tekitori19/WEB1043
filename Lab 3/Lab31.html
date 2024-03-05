@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator</title>
+</head>
+<body>
+
+<script>
+    // Nhập từ bàn phím 2 toán hạng và một toán tử
+    var a = prompt("Toán hạng a: ");
+    var b = prompt("Toán hạng b: ");
+    var o = prompt("Toán tử (+, -, x, /): ");
+
+    // Chuyển đổi chuỗi thành số
+    a = parseFloat(a);
+    b = parseFloat(b);
+
+    // Phân tích toán tử và thực hiện phép tính tương ứng
+    switch(o) {
+        case '+':
+            var kq = a + b;
+            alert("Tổng: " + kq);
+            break;
+        case '-':
+            var kq = a - b;
+            alert("Hiệu: " + kq);
+            break;
+        case 'x':
+        case '*': // Cho phép sử dụng cả '*' hoặc 'x' cho phép nhân
+            var kq = a * b;
+            alert("Tích: " + kq);
+            break;
+        case '/':
+            if (b !== 0) {
+                var kq = a / b;
+                alert("Thương: " + kq);
+            } else {
+                alert("Không thể chia cho 0");
+            }
+            break;
+        default:
+            alert(o + " không phải là toán tử hợp lệ");
+            break;
+    }
+</script>
+
+</body>
+</html>
