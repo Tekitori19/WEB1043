@@ -6,8 +6,8 @@ var hienThi = "Xin ch\u00E0o, t\u00F4i l\u00E0 ".concat(ten, " v\u00E0 t\u00F4i 
 // console.log(hienThi);
 //BT 2
 var num = 0.873457689;
-if (!isNaN(num)) {
-    // console.log("a không phải là số");
+if (isNaN(num)) {
+    console.log("a không phải là số");
 }
 var convertNum = (num.toFixed(3)).toString();
 // console.log(convertNum, typeof convertNum);

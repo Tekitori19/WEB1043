@@ -7,8 +7,8 @@ let hienThi = `Xin chào, tôi là ${ten} và tôi ${age} tuổi.`
 
 //BT 2
 const num = 0.873457689;
-if (!isNaN(num)) {
-    // console.log("a không phải là số");
+if (isNaN(num)) {
+    console.log("a không phải là số");
 }
 const convertNum = (num.toFixed(3)).toString()
 // console.log(convertNum, typeof convertNum);
