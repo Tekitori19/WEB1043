@@ -18,8 +18,14 @@ const convertNum1 = num.toFixed(5)
 //BT 3
 const sinhVien = "Sinh viên Công nghệ thông tin";
 const truongHoc = "FPT Polytechnic";
-// console.log(sinhVien.substring(0, 4), truongHoc.substring(0, 4));
-// console.log(sinhVien.concat(" - ", truongHoc));
+console.log(sinhVien.substring(0, 4), truongHoc.substring(0, 4));
+console.log(sinhVien.concat(" - ", truongHoc));
+// sinhVien.toUpperCase()
+// truongHoc.toLowerCase()
+// sinhVien.concat(" ", truongHoc)
+console.log(sinhVien.toUpperCase(), truongHoc.toLowerCase(), sinhVien.concat(" ", truongHoc));
+
+
 
 //BT 4
 const tinhTongHop = () : void => {    

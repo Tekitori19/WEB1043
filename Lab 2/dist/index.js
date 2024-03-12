@@ -16,8 +16,12 @@ var convertNum1 = num.toFixed(5);
 //BT 3
 var sinhVien = "Sinh viên Công nghệ thông tin";
 var truongHoc = "FPT Polytechnic";
-// console.log(sinhVien.substring(0, 4), truongHoc.substring(0, 4));
-// console.log(sinhVien.concat(" - ", truongHoc));
+console.log(sinhVien.substring(0, 4), truongHoc.substring(0, 4));
+console.log(sinhVien.concat(" - ", truongHoc));
+// sinhVien.toUpperCase()
+// truongHoc.toLowerCase()
+// sinhVien.concat(" ", truongHoc)
+console.log(sinhVien.toUpperCase(), truongHoc.toLowerCase(), sinhVien.concat(" ", truongHoc));
 //BT 4
 var tinhTongHop = function () {
     var so1 = document.getElementById("num1").valueAsNumber;
