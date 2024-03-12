@@ -9,9 +9,9 @@ var num = 0.873457689;
 if (isNaN(num)) {
     console.log("a không phải là số");
 }
-var convertNum = (num.toFixed(3)).toString();
+var convertNum = num.toFixed(3);
 // console.log(convertNum, typeof convertNum);
-var convertNum1 = (num.toFixed(5)).toString();
+var convertNum1 = num.toFixed(5);
 // console.log(num.toFixed(2), num.toFixed(5));
 //BT 3
 var sinhVien = "Sinh viên Công nghệ thông tin";
