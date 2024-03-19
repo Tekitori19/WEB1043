@@ -1,0 +1,38 @@
+"use strict";
+// Tạo một danh sách lớp theo những yêu cầu sau: 
+// Danh sách 5 sinh viên
+// Mỗi sinh viên có 5 đặc tính: Họ, Tên, ID, Quê quán, Học lực (Giỏi, Khá, Trung bình) 
+// Tạo class và dùng mảng gán giá trị cho từng object 
+// Thực hiện các yêu cầu sau: 
+// Truy xuất tên của 5 sinh viên 
+// Truy xuất tên và học lực của 5 sinh viên
+// Truy xuất ra tên và học lực của những sinh viên có học lực Giỏi
+var HocLuc;
+(function (HocLuc) {
+    HocLuc["Gioi"] = "Gi\u1ECFi";
+    HocLuc["Kha"] = "Kh\u00E1";
+    HocLuc["TrungBinh"] = "Trung B\u00ECnh";
+})(HocLuc || (HocLuc = {}));
+class SinhVien {
+    constructor(ho, ten, _ID, queQuan, hocLuc) {
+        this.ho = ho;
+        this.ten = ten;
+        this._ID = _ID;
+        this.queQuan = queQuan;
+        this.hocLuc = hocLuc;
+    }
+    getID() {
+        return this._ID;
+    }
+}
+const danhSachLop = [
+    new SinhVien("ho 1", "ten 1", "1", "Que quan 1", HocLuc.Gioi),
+    new SinhVien("ho 2", "ten 2", "2", "Que quan 2", HocLuc.Kha),
+    new SinhVien("ho 3", "ten 3", "3", "Que quan 3", HocLuc.TrungBinh),
+    new SinhVien("ho 4", "ten 4", "4", "Que quan 4", HocLuc.Kha),
+    new SinhVien("ho 5", "ten 5", "5", "Que quan 5", HocLuc.TrungBinh),
+];
+danhSachLop.map(sv => {
+    console.log(sv.ten, sv.hocLuc);
+});
+console.log(danhSachLop.filter(sv => sv.hocLuc === HocLuc.Gioi));
