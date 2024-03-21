@@ -35,4 +35,6 @@ const danhSachLop = [
 danhSachLop.map(sv => {
     console.log(sv.ten, sv.hocLuc);
 });
-console.log(danhSachLop.filter(sv => sv.hocLuc === HocLuc.Gioi));
+danhSachLop.filter(sv => sv.hocLuc === HocLuc.Gioi).map(sv => {
+    console.log("\n", sv.ten, sv.hocLuc);
+});
