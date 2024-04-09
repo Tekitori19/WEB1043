@@ -1,0 +1,90 @@
+<script src="https://cdn.tailwindcss.com"></script>
+<div class="m-4">
+    <button onclick="show()" class="bg-green-400 p-1 rounded">Nhập thông tin</button>
+    <form class="show hidden">
+        <div>
+            <label for="ten">Nhập tên:</label>
+            <input type="text"
+              required
+             name="ten" id="ten">
+        </div>
+        <div>
+            <label for="sdt">Nhập sdt:</label>
+            <input type="tel"
+             pattern="[0-9]{10}"
+             required
+             name="sdt" id="sdt">
+        </div>
+        <div>
+            <select name="yeu_cau" >
+                <option value="1">Đăng ký tư vấn</option>
+                <option value="2">Nhận thông báo mới</option>
+            </select>
+        </div>
+        <div>
+            
+            <button type="submit" class="bg-red-400 p-1 w-fit rounded">Gửi</button>
+        </div>
+    </form>
+    <div class="showDate hidden">
+        <label for="date">Nhập ngày hẹn</label>
+        <input type="date" name="data" required id="date">
+        <button class="bg-green-400 p-1 rounded" onclick="(()=>{
+            let x= confirm(`xác nhận đăng ký tư vấn`)
+            if (x) {
+               alert('Đăng ký thành công') 
+            }
+        })()">Xác nhận</button>
+    </div>
+</div>
+
+
+
+<script>
+    function validate() {
+        const ten = document.querySelector('#ten').textContent.trim()
+        if (ten) {
+            alert("Vui lòng nhập tên")
+            return false;
+        }
+        
+        const sdt = document.querySelector('#sdt').value.trim()
+        // console.log(sdt);
+        if (!sdt) {
+            alert("Vui lòng nhập sdt")
+            return false;
+        } else if(sdt.length !== 10)
+        {
+            alert("vui lòng nhập lại số điện thoại (đủ 10 số)")
+            return false;
+        }else if(!parseFloat(sdt))
+        {
+            alert
+        }
+
+        return true
+    }
+
+    function show() {
+        document.querySelector('.show').classList.toggle('hidden')
+    }
+
+    let btnSub = document.querySelector('button[type="submit"]')
+
+    btnSub.addEventListener("click", (e) => {
+        e.preventDefault() 
+        if (!validate()) {
+           return 
+        }
+        const yeu_cau = document.querySelector('select[name="yeu_cau"]')
+        console.log(yeu_cau.value)
+        if (yeu_cau.value == 1) {
+            document.querySelector('.showDate').classList.remove('hidden')
+        } else {
+            let x = confirm(" xác nhận đăng ký tư vấn")
+            if (x) {
+               alert('Đăng ký thành công') 
+            }
+        }
+    })
+</script>
